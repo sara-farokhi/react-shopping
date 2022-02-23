@@ -25,22 +25,20 @@ const Orders = () => {
         <h3 className="text-primary text-center border-bottom pb-2 ">Orders</h3>
 
         {tocreateBox.map((box, i) => (
-          <>
-            <div className="border-bottom p-3" key={i}>
-              <h5> Order Name : {box} </h5>
-              <h5>
-                numbers: {orders.filter((order) => order.name === box).length}
-              </h5>
-              <div
-                className="btn btn-outline-danger my-3"
-                onClick={() => deletOrderHandler(i)}
-              >
-                <span className="h3">
-                  <i className="fa fa-trash" />
-                </span>
-              </div>
+          <div className="border-bottom p-3" key={i}>
+            <h5> Order Name : {box} </h5>
+            <h5>
+              numbers: {orders.filter((order) => order.name === box).length}
+            </h5>
+            <div
+              className="btn btn-outline-danger my-3"
+              onClick={() => deletOrderHandler(i)}
+            >
+              <span className="h3">
+                <i className="fa fa-trash" />
+              </span>
             </div>
-          </>
+          </div>
         ))}
 
         <h3 className="text-success text-center m-4">
