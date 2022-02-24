@@ -1,4 +1,4 @@
-import { DELET_ORDER, ADD_ORDER, FILTER } from "../../types";
+import { DELET_ORDER, ADD_ORDER, FILTER, ORDER_BOX } from "../../types";
 
 const shopReducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +11,11 @@ const shopReducer = (state, action) => {
       return {
         ...state,
         filter: action.payload,
+      };
+    case ORDER_BOX:
+      return {
+        ...state,
+        orderBox: action.payload,
       };
 
     default:

@@ -2,11 +2,13 @@ import ShopContext from "../context/shop/shopContext";
 import { useContext } from "react";
 
 const Animal = ({ animal }) => {
-  const { addOrder, dofilter } = useContext(ShopContext);
+  const { addOrder, dofilter, setOrderBox, orderBox } = useContext(ShopContext);
 
   const handlerOrder = () => {
     dofilter(animal);
     addOrder(animal);
+    orderBox.push(animal.name);
+    setOrderBox();
   };
 
   return (
